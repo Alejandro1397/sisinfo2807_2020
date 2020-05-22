@@ -43,7 +43,7 @@ function buscarByIsbn(is){
 }
 
 function modificarTituloByIsbn(is, nuevoTitulo){
-    Libro.findByIdAndUpdate({isbn:is}, {titulo:nuevoTitulo}, function(err, data){
+    Libro.findOneAndUpdate({isbn:is}, {'titulo':nuevoTitulo}, function(err, data){
         if (err) {
             console.log(err);
           }
